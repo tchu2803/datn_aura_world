@@ -1,0 +1,104 @@
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
+  /* Thêm min-height để tránh collapse */
+  min-height: 0;
+  /* Đảm bảo scroll mượt mà */
+  scroll-behavior: smooth;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 1rem;
+  /* Thêm min-height để tránh flickering */
+  min-height: 40px;
+  align-items: flex-start;
+}
+
+.userMessage {
+  justify-content: flex-end;
+}
+
+.assistantMessage {
+  justify-content: flex-start;
+}
+
+.messageAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* Thêm margin để tránh sát nhau */
+  margin: 0 8px;
+}
+
+.userAvatar {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.assistantAvatar {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.messageContent {
+  max-width: 75%;
+  /* Thêm min-width để tránh co lại quá nhỏ */
+  min-width: 100px;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+  position: relative;
+  /* Thêm word-wrap để tránh overflow */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.assistantMessage .messageContent {
+  background-color: #fd7e14;
+}
+
+/* Cải thiện CSS cho userQuestion */
+.userQuestion {
+  max-width: 75%;
+  min-width: 100px;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+  position: relative;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.messageTime {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.assistantMessage .messageTime {
+  text-align: left;
+}
+
+/* Thêm CSS cho responsive */
+@media (max-width: 768px) {
+  .messageContent,
+  .userQuestion {
+    max-width: 85%;
+  }
+  
+  .chatMessages {
+    padding: 1rem;
+  }
+}
